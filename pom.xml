@@ -7,7 +7,7 @@
     <groupId>com.zzl</groupId>
     <artifactId>springcloud-study</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <!--父模块配置maven分模块管理,若不配置-->
+    <!--父模块配置maven分模块管理,若不配置,则默认会配置jar打包类型-->
     <packaging>pom</packaging>
 
     <name>Maven</name>
