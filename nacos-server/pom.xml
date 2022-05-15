@@ -10,19 +10,25 @@
     </parent>
 
     <groupId>com.zzl</groupId>
-    <artifactId>eureka-server</artifactId>
+    <artifactId>nacos-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>eureka-server</name>
-    <description>eureka-server</description>
+    <name>nacos-server</name>
+    <description>Demo project for Spring Boot</description>
 
     <dependencies>
-        <!--引入eureka依赖-->
+        <!--nacos自动配置-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-            <!--用子模块的版本覆盖父模块定义的全局版本依赖-->
-            <version>2.1.4.RELEASE</version>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>2.2.5.RELEASE</version>
+        </dependency>
+        <!--引入nacos依赖包-服务注册-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>2.2.5.RELEASE</version>
         </dependency>
     </dependencies>
+
 
 </project>
