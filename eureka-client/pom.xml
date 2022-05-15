@@ -10,20 +10,23 @@
 	</parent>
 
 	<groupId>com.zzl</groupId>
-	<artifactId>study-model01</artifactId>
+	<artifactId>eureka-client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>study-model01</name>
-	<description>study-model01</description>
+	<name>eureka-client</name>
+	<description>eureka-client</description>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 
-
-		<!--引入eureka依赖-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud</groupId>-->
-			<!--<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
-		<!--</dependency>-->
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
+
 
 </project>

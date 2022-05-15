@@ -12,7 +12,8 @@
 
     <!--配置各个子模块-->
     <modules>
-        <module>study-model01</module>
+        <module>eureka-server</module>
+        <module>eureka-client</module>
     </modules>
     <!--注意Spring boot的版本要和Spring cloud版本对应上，不然会报错 -->
     <!--git 网址查看版本信息 https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Greenwich-Release-Notes-->
@@ -40,7 +41,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-        <!--不加如下配置，项目启动后会自动停止-->
+        <!--不加如下配置，Spring boot项目启动后会自动停止-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
