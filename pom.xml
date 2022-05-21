@@ -17,21 +17,26 @@
         <module>nacos-server</module>
         <module>order-service</module>
         <module>stock-service</module>
+        <module>order-nacos</module>
+        <module>stock-nacos</module>
     </modules>
     <!--注意Spring boot的版本要和Spring cloud版本对应上，不然会报错 -->
     <!--git 网址查看版本信息 https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Greenwich-Release-Notes-->
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.2.RELEASE</version>
-        <relativePath/>
-    </parent>
+
+    <!--Springboot的版本管理器,之后可以在此定义公司内部自己的父依赖-->
+    <!--<parent>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+        <!--<version>2.3.2.RELEASE</version>-->
+    <!--</parent>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-cloud.version>2.2.6.RELEASE</spring-cloud.version>
+        <spring.cloud.version>Hoxton.SR8</spring.cloud.version>
+        <spring.boot.version>2.3.11.RELEASE</spring.boot.version>
+        <spring.cloud.alibaba.version>2.2.5.RELEASE</spring.cloud.alibaba.version>
     </properties>
     <!--配置全局依赖项:在顶层pom定义共同的依赖关系-->
     <dependencies>
@@ -50,12 +55,31 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
+    <!--对子类版本的一个显示声明-->
     <dependencyManagement>
         <dependencies>
+            <!--spring cloud alibaba的版本管理,通过dependency继承-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring boot的版本管理-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring cloud的版本管理（定义各个组件的版本，比如nacos,sentinel等）-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <!--简称H版本-->
+                <version>${spring.cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
