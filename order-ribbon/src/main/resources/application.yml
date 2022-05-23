@@ -1,5 +1,5 @@
 server:
-  port: 9004
+  port: 9007
 
 spring:
   application:
@@ -14,3 +14,7 @@ spring:
         password: nacos
 #        默认为true,表示临时实例，false表示永久实例，即使服务宕机，nacos中也不会删除该服务列表
         ephemeral: true
+stock-service:
+  ribbon:
+#    配置类实现基于nacos内部的ribbon负载均衡策略-加权轮询
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
