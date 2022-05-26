@@ -1,5 +1,5 @@
 server:
-  port: 9007
+  port: 9008
 
 spring:
   application:
@@ -14,14 +14,18 @@ spring:
         password: nacos
 #        默认为true,表示临时实例，false表示永久实例，即使服务宕机，nacos中也不会删除该服务列表
         ephemeral: true
-stock-service:
-  ribbon:
+#        禁用spring cloud的ribbon
+    loadbalancer:
+      ribbon:
+        enabled: false
+#stock-service:
+#  ribbon:
 #    配置类实现基于nacos内部的ribbon负载均衡策略-加权轮询
-    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+#    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
 # 负载均衡策略默认是懒加载的，通过如下配置可以将其配置成饥饿加载，即启动的过程中加载
-ribbon:
-  eager-load:
+#ribbon:
+#  eager-load:
 #    开启饥饿加载
-    enabled: true
+#    enabled: true
 #    配置使用饥饿加载的服务，多个服务使用逗号隔开
-    clients: stock-service
+#    clients: stock-service

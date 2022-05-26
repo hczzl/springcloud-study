@@ -20,6 +20,7 @@
         <module>order-nacos</module>
         <module>stock-nacos</module>
         <module>order-ribbon</module>
+        <module>order-loadbalancer</module>
     </modules>
     <!--注意Spring boot的版本要和Spring cloud版本对应上，不然会报错 -->
     <!--git 网址查看版本信息 https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Greenwich-Release-Notes-->
