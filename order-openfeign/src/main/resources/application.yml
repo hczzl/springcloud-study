@@ -26,3 +26,12 @@ feign:
       # 特指配置商品服务的日志级别
       product-service:
         loggerLevel: FULL
+        # Feign的超时时间配置
+        # 连接超时时间，默认为2秒
+        connectTimeout: 5000
+        # 请求处理超时时间，默认为5秒
+        readTimeout: 10000
+        # OpenFeign的自定义拦截器配置
+        requestInterceptors[0]:
+          com.zzl.order.config.CustomOpenFeignInterceptor
+
