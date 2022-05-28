@@ -1,0 +1,28 @@
+server:
+  port: 9009
+
+spring:
+  application:
+    name: order-service
+  cloud:
+    nacos:
+      discovery:
+#        以下都是默认的，可以不写
+        server-addr: 127.0.0.1:8848
+        namespace: public
+        username: nacos
+        password: nacos
+#        默认为true,表示临时实例，false表示永久实例，即使服务宕机，nacos中也不会删除该服务列表
+        ephemeral: true
+# spring boot的默认日志级别是info,将其设置为debug，Feign的日志才会输出
+logging:
+  level:
+    # 指定特点文件的接口才会输出debug日志
+    com.zzl.order.feign: debug
+# Feign日志局部配置
+feign:
+  client:
+    config:
+      # 特指配置商品服务的日志级别
+      product-service:
+        loggerLevel: FULL
