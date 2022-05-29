@@ -1,0 +1,10 @@
+server:
+  port: 9011
+spring:
+  application:
+    # 服务会根据服务名去nacos中匹配data_id对应的配置文件
+    name: config-nacos
+  # 配置了profiles之后，会按照 ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+  # 的方式去匹配nacos 客户端中data_id对应的配置文件，并且profiles配置优先级大于默认配置的优先级，并且会形成互补
+  profiles:
+    active: dev
